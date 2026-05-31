@@ -1,6 +1,6 @@
 #!/bin/bash
 #=============================================================================
-# VPS Watchtower — Daily server security report, delivered to your Telegram
+# VPS WatchTower — Daily server security report, delivered to your Telegram
 # https://github.com/MaxBuzz-dev/VPS-WatchTower
 #
 # Author: Abbas Baarudwaala (github.com/cfinhas)

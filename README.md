@@ -1,11 +1,11 @@
-# 🗼 VPS Watchtower
+# 🗼 VPS WatchTower
 
 **Daily server security report — delivered to your Telegram.**
 
 One script. Drop it on any Linux server. Get a morning security digest that audits SSH logins with geo-location, tracks failed attempts, checks blacklists, monitors SSL expiry, and keeps an eye on system health.
 
 ```
-🔐 VPS Watchtower | My VPS
+🔐 VPS WatchTower | My VPS
 31 May 2026, 08:00
 ✅ All clear
 
@@ -109,7 +109,7 @@ bash /usr/local/bin/watchtower.sh
 
 **Clean server:**
 ```
-🔐 VPS Watchtower | My VPS
+🔐 VPS WatchTower | My VPS
 ✅ All clear
 
 📡 Blacklist: Clean
@@ -123,7 +123,7 @@ bash /usr/local/bin/watchtower.sh
 
 **Server with issues:**
 ```
-🔐 VPS Watchtower | My VPS
+🔐 VPS WatchTower | My VPS
 ⚠️  Issues: unknown-logins updates failed-services
 
 🔑 SSH logins: 28 sessions | Failed: 891 attempts (203 IPs)
