@@ -20,20 +20,42 @@ One script. Drop it on any Linux server. Get a morning security digest that audi
 
 ## Features
 
-| Check | What it catches |
-|---|---|
-| SSH geo-login audit | Knows your cities (Aurangabad, Dubai, etc.) — flags everything else |
-| Failed login tracking | See brute-force volume per day |
-| DNSBL blacklist check | Spamhaus & Barracuda — is your server being abused? |
-| SSL cert expiry | Warns when certs have <14 days left |
-| Security updates | `apt` security patch count |
-| Failed systemd services | Catches crashed services |
-| Docker health | Running container count + unhealthy containers |
-| WordPress admin audit | Counts admin users across all WP sites |
-| Backdoor scan | PHP files with `base64_decode` + `$_GET`/`$_POST` |
-| fail2ban stats | SSH + jail ban counts |
-| Cron tamper detection | Suspicious cron jobs (base64, eval, curl\|sh) |
-| System resources | Disk %, RAM %, high CPU processes |
+> **Everything you need to monitor your server — delivered to your Telegram every morning.**
+
+### 🔐 SSH Security & Geo-Audit
+- **Geo-login tracking** — Know your cities (Aurangabad, Sharjah, Dubai, etc.). Logins from anywhere else are flagged with IP, city, country & ISP
+- **Failed login monitoring** — See how many brute-force attempts hit your server daily and from how many unique IPs
+- **Admin IP whitelist** — Static IPs skip geo-lookup entirely, always shown as known
+
+### 🚫 DNSBL Blacklist Check
+- **Spamhaus & Barracuda** — Checks if your server is blacklisted and being abused as a spam relay
+- Instant alert if your IP is listed so you can act fast
+
+### 📲 Telegram Delivery
+- **Daily digest on your phone** — Wake up to a clean security report every morning
+- **Two delivery modes** — Hermes CLI (preferred) or direct Telegram Bot API (no extra software needed)
+- **Zero infrastructure** — No databases, no dashboard, no web app needed
+
+### 🌐 WordPress Security
+- **Backdoor scan** — Scans for PHP files containing `base64_decode` + `$_GET`/`$_POST` — the classic webshell signature
+- **Admin account audit** — Counts admin users across all your WordPress sites
+- **Cron tamper detection** — Flags suspicious cron entries (base64, eval, curl|sh patterns)
+
+### 🐳 Docker Container Health
+- **Running container count** — See how many containers are active
+- **Unhealthy container alerts** — Flags containers with failing health checks
+
+### 🔒 SSL Certificate Monitoring
+- **Expiry warnings** — Shows how many certificates expire within 14 days
+- Catches expiring certs before your sites go down
+
+### ⚕️ System Health
+- **Failed systemd services** — Catches crashed or misconfigured services
+- **Disk space usage** — Alerts when disk exceeds 85%
+- **RAM usage** — Alerts when memory exceeds 90%
+- **High CPU processes** — Shows any process using >30% CPU
+- **Pending security updates** — Counts available `apt` security patches
+- **fail2ban stats** — Active ban counts for SSH and other jails
 
 ## Quick Start
 
