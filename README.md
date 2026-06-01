@@ -57,9 +57,43 @@ One script. Drop it on any Linux server. Get a morning security digest that audi
 - **Pending security updates** — Counts available `apt` security patches
 - **fail2ban stats** — Active ban counts for SSH and other jails
 
+## Included Scripts
+
+| File | Purpose |
+|------|---------|
+| `watchtower.sh` | **Daily security report** — runs on cron, gives you a morning digest |
+| `ssh-login-alert.sh` | **Real-time SSH login alert** — fires on every SSH login, sends geo-location immediately |
+
+### `ssh-login-alert.sh` Setup
+
+Sends an instant Telegram notification whenever someone SSHs into your server:
+
+```bash
+# 1. Download
+curl -sL https://raw.githubusercontent.com/MaxBuzz-dev/VPS-WatchTower/main/ssh-login-alert.sh \
+  -o /root/ssh-login-alert.sh
+chmod +x /root/ssh-login-alert.sh
+
+# 2. Edit the top of the file — set BOT_TOKEN, CHAT_ID, and SERVER_NAME
+
+# 3. Hook into SSH
+echo '/root/ssh-login-alert.sh "$1"' >> /etc/ssh/sshrc
+chmod +x /etc/ssh/sshrc
+```
+
+Now every SSH login sends a message like:
+```
+🔑 SSH Login - root
+🖥 My Server
+IP: 203.0.113.42
+📍 Bangkok, Thailand
+🏢 Some ISP
+⏰ 01 Jun 2026, 08:00 UTC
+```
+
 ## Quick Start
 
-### 1. Download
+### 1. Download the daily report
 
 ```bash
 curl -sL https://raw.githubusercontent.com/MaxBuzz-dev/VPS-WatchTower/main/watchtower.sh \
